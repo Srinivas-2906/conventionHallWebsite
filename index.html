@@ -1,0 +1,3236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon Convention Center | Elegant Events & Conferences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0c2340;
+            --primary-light: #1a3a5f;
+            --secondary: #c8a97e;
+            --secondary-light: #d4bc98;
+            --accent: #e63946;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --border-radius: 0.25rem;
+            --border-radius-lg: 0.5rem;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .section-title.centered {
+            text-align: center;
+            display: block;
+        }
+
+        .section-title.centered::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        .section-subtitle.centered {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .gap-6 {
+            gap: 1.5rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .mt-8 {
+            margin-top: 2rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            padding: 0.5rem;
+            font-weight: 500;
+            position: relative;
+            color: var(--dark);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 1rem;
+            box-shadow: var(--box-shadow);
+            z-index: 100;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: var(--border-radius);
+        }
+
+        .mobile-menu .nav-link:hover {
+            background-color: var(--gray-100);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: white;
+            max-width: 700px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-700);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--gray-100);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .stat-item:hover .stat-number {
+            color: var(--secondary-light);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Facilities Section */
+        .facilities {
+            background-color: var(--gray-100);
+            position: relative;
+        }
+
+        .facilities-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .facility-tab {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            background-color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .facility-tab.active, .facility-tab:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .facilities-content {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .facilities-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .facility-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+        }
+
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .facility-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .facility-details h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .facility-details p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-700);
+        }
+
+        .facility-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .facility-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .facility-feature i {
+            color: var(--secondary);
+        }
+
+        .facility-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .facility-spec {
+            background-color: var(--gray-200);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .facility-spec i {
+            color: var(--primary);
+        }
+
+        .facility-cta {
+            margin-top: 2rem;
+        }
+
+        /* 3D Tour Section */
+        .virtual-tour {
+            background-color: white;
+            position: relative;
+        }
+
+        .tour-container {
+            position: relative;
+            height: 500px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .tour-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .tour-overlay:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .tour-play {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tour-play:hover {
+            transform: scale(1.1);
+            background-color: var(--secondary);
+        }
+
+        /* Events Section */
+        .events {
+            background-color: var(--gray-100);
+            position: relative;
+        }
+
+        .events-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .event-filter {
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            background-color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .event-filter.active, .event-filter:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .event-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+
+        .event-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .event-date {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-description {
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .event-attendees {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: white;
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--gray-100);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+            background-color: white;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background-color: var(--secondary);
+            transform: rotateY(180deg);
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-description {
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--gray-100);
+            position: relative;
+        }
+
+        .testimonials-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .testimonial-content {
+            position: relative;
+            font-style: italic;
+            color: var(--gray-700);
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary);
+            opacity: 0.3;
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-content::before {
+            top: -1.5rem;
+            left: 0;
+        }
+
+        .testimonial-content::after {
+            bottom: -2.5rem;
+            right: 0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+
+        .testimonial-info p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        .testimonial-rating {
+            color: var(--secondary);
+            margin-top: 0.25rem;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--gray-300);
+            margin: 0 0.25rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        .testimonial-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .testimonial-arrow:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .testimonial-prev {
+            left: -20px;
+        }
+
+        .testimonial-next {
+            right: -20px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: white;
+            position: relative;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-toggle-label {
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .pricing-toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: var(--gray-300);
+            border-radius: 30px;
+            margin: 0 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .pricing-toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background-color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .pricing-toggle-switch.active {
+            background-color: var(--secondary);
+        }
+
+        .pricing-toggle-switch.active::after {
+            transform: translateX(30px);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background-color: var(--gray-100);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .pricing-card.popular {
+            transform: scale(1.05);
+            background-color: white;
+            box-shadow: var(--box-shadow-lg);
+            border: 2px solid var(--secondary);
+        }
+
+        .pricing-popular-tag {
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.25rem 2rem;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-header {
+            margin-bottom: 2rem;
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .pricing-subtitle {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray-600);
+        }
+
+        .pricing-features {
+            margin-bottom: 2rem;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--gray-700);
+        }
+
+        .pricing-feature i {
+            color: var(--secondary);
+        }
+
+        .pricing-feature.disabled {
+            color: var(--gray-400);
+            text-decoration: line-through;
+        }
+
+        .pricing-feature.disabled i {
+            color: var(--gray-400);
+        }
+
+        /* Booking Section */
+        .booking {
+            background-color: var(--gray-100);
+            position: relative;
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .booking-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+        }
+
+        .booking-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .booking-form {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .booking-form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 16px 12px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .form-check-input {
+            margin-right: 0.5rem;
+        }
+
+        .form-check-label {
+            font-size: 0.875rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: white;
+            position: relative;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-info-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin-right: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .contact-details h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--secondary);
+        }
+
+        .contact-details p {
+            color: var(--gray-300);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .contact-social-link:hover {
+            background-color: var(--secondary);
+        }
+
+        .contact-form {
+            background-color: var(--gray-100);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-map {
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            margin-top: 3rem;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-about p {
+            color: var(--gray-400);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .footer-social-link:hover {
+            background-color: var(--secondary);
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .footer-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 20px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            margin-bottom: 1rem;
+            color: var(--gray-400);
+        }
+
+        .footer-contact-icon {
+            color: var(--secondary);
+            margin-right: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-500);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Capacity Calculator */
+        .capacity-calculator {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            margin-top: 3rem;
+        }
+
+        .calculator-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calculator-result {
+            background-color: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            display: none;
+        }
+
+        .calculator-result.show {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .result-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .result-layout {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* Before/After Slider */
+        .before-after {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .before-after-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .before-img {
+            z-index: 1;
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+        }
+
+        .after-img {
+            z-index: 0;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background-color: white;
+            z-index: 2;
+            transform: translateX(-50%);
+            cursor: ew-resize;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate(-50%, -50%);
+            box-shadow: var(--box-shadow);
+            z-index: 3;
+            cursor: ew-resize;
+        }
+
+        .slider-button i {
+            color: var(--primary);
+        }
+
+        .before-label, .after-label {
+            position: absolute;
+            top: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+
+        .before-label {
+            left: 1rem;
+        }
+
+        .after-label {
+            right: 1rem;
+        }
+
+        /* Calendar */
+        .availability-calendar {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            margin-top: 3rem;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .calendar-nav-btn {
+            width: 36px;
+            height: 36px;
+            background-color: var(--gray-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .calendar-nav-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+
+        .calendar-weekday {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+            padding: 0.5rem;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 0.75rem 0;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .calendar-day:hover {
+            background-color: var(--gray-200);
+        }
+
+        .calendar-day.today {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .calendar-day.available {
+            border: 1px solid var(--success);
+        }
+
+        .calendar-day.booked {
+            background-color: var(--gray-200);
+            color: var(--gray-500);
+            cursor: not-allowed;
+        }
+
+        .calendar-day.selected {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .calendar-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .legend-available {
+            border: 1px solid var(--success);
+            background-color: white;
+        }
+
+        .legend-booked {
+            background-color: var(--gray-200);
+        }
+
+        .legend-selected {
+            background-color: var(--secondary);
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 576px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-content, .booking-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .facility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .facility-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-arrow {
+                display: none;
+            }
+
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        /* Swiper Styles */
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: var(--secondary);
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <a href="#" class="logo">
+                    <img src="https://img.icons8.com/fluency/96/null/conference.png" alt="Grand Horizon Logo" class="logo-img">
+                    <span>Grand Horizon</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                        <li><a href="#events" class="nav-link">Events</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#booking" class="nav-link">Book Now</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#facilities" class="nav-link">Facilities</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#booking" class="nav-link">Book Now</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide hero-slide">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&h=1080&fit=crop&crop=focalpoint&auto=format&q=80" alt="Grand Ballroom" class="hero-img">
+                    <div class="hero-overlay">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h3 class="hero-subtitle">Welcome to Grand Horizon</h3>
+                                <h1 class="hero-title">Elevate Your Events to New Heights</h1>
+                                <p class="hero-description">Discover our world-class convention center with state-of-the-art facilities designed to make your events truly exceptional.</p>
+                                <div class="hero-btns">
+                                    <a href="#booking" class="btn btn-secondary btn-lg">Book Now</a>
+                                    <a href="#virtual-tour" class="btn btn-outline btn-lg">Virtual Tour</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide hero-slide">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1920&h=1080&fit=crop&crop=focalpoint&auto=format&q=80" alt="Wedding Setup" class="hero-img">
+                    <div class="hero-overlay">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h3 class="hero-subtitle">Elegant Celebrations</h3>
+                                <h1 class="hero-title">Create Unforgettable Wedding Memories</h1>
+                                <p class="hero-description">Our luxurious venues provide the perfect backdrop for your special day, with customizable spaces and exceptional service.</p>
+                                <div class="hero-btns">
+                                    <a href="#facilities" class="btn btn-secondary btn-lg">Explore Venues</a>
+                                    <a href="#contact" class="btn btn-outline btn-lg">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide hero-slide">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=1080&fit=crop&crop=focalpoint&auto=format&q=80" alt="Conference Setup" class="hero-img">
+                    <div class="hero-overlay">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h3 class="hero-subtitle">Professional Environments</h3>
+                                <h1 class="hero-title">Host Impactful Corporate Events</h1>
+                                <p class="hero-description">From intimate board meetings to large-scale conferences, our versatile spaces and cutting-edge technology ensure success.</p>
+                                <div class="hero-btns">
+                                    <a href="#services" class="btn btn-secondary btn-lg">Our Services</a>
+                                    <a href="#events" class="btn btn-outline btn-lg">Past Events</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582192730841-2a682d7375f9?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Grand Horizon Convention Center">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">About Grand Horizon</h2>
+                    <p>Grand Horizon Convention Center is a premier event venue located in the heart of the city, offering versatile spaces for all types of gatherings. Since our establishment in 2010, we have been the venue of choice for prestigious events, from corporate conferences to elegant weddings.</p>
+                    <p>Our commitment to excellence is reflected in our state-of-the-art facilities, exceptional service, and attention to detail. We understand that every event is unique, which is why our experienced team works closely with clients to customize our spaces and services to meet their specific needs.</p>
+                    <p>With over 50,000 square feet of flexible event space, cutting-edge technology, and world-class amenities, Grand Horizon is designed to elevate your events to new heights.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Events Annually</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Versatile Venues</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5,000</div>
+                            <div class="stat-label">Guest Capacity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities section-padding" id="facilities">
+        <div class="container">
+            <h2 class="section-title centered">Our Facilities</h2>
+            <p class="section-subtitle centered">Discover our versatile spaces designed to accommodate events of all sizes and styles.</p>
+            
+            <div class="facilities-tabs">
+                <div class="facility-tab active" data-tab="grand-ballroom">Grand Ballroom</div>
+                <div class="facility-tab" data-tab="conference-halls">Conference Halls</div>
+                <div class="facility-tab" data-tab="meeting-rooms">Meeting Rooms</div>
+                <div class="facility-tab" data-tab="exhibition-space">Exhibition Space</div>
+                <div class="facility-tab" data-tab="outdoor-venues">Outdoor Venues</div>
+            </div>
+            
+            <div class="facilities-content active" id="grand-ballroom">
+                <div class="facility-grid">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Grand Ballroom">
+                    </div>
+                    <div class="facility-details">
+                        <h3>Grand Ballroom</h3>
+                        <p>Our magnificent Grand Ballroom is the crown jewel of Grand Horizon, offering an expansive and elegant space for large-scale events. With crystal chandeliers, customizable lighting, and a sophisticated ambiance, it provides the perfect backdrop for weddings, galas, and corporate events.</p>
+                        
+                        <div class="facility-specs">
+                            <div class="facility-spec">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <span>15,000 sq ft</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-users"></i>
+                                <span>Up to 1,200 guests</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-chair"></i>
+                                <span>Flexible seating</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-features">
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>State-of-the-art AV system</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Customizable lighting</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Built-in stage</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Dedicated entrance</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Bridal/VIP suite</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>High ceilings</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-cta">
+                            <a href="#booking" class="btn btn-primary">Book This Venue</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="before-after mt-8">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Empty Ballroom" class="before-after-img before-img">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Decorated Ballroom" class="before-after-img after-img">
+                    <div class="slider-handle">
+                        <div class="slider-button">
+                            <i class="fas fa-arrows-alt-h"></i>
+                        </div>
+                    </div>
+                    <div class="before-label">Empty</div>
+                    <div class="after-label">Decorated</div>
+                </div>
+            </div>
+            
+            <div class="facilities-content" id="conference-halls">
+                <div class="facility-grid">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Conference Hall">
+                    </div>
+                    <div class="facility-details">
+                        <h3>Conference Halls</h3>
+                        <p>Our versatile conference halls are designed to accommodate professional gatherings of various sizes. Each hall features advanced technology, ergonomic seating, and customizable layouts to ensure productive and successful meetings, conferences, and seminars.</p>
+                        
+                        <div class="facility-specs">
+                            <div class="facility-spec">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <span>5,000-8,000 sq ft each</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-users"></i>
+                                <span>200-500 guests</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-chair"></i>
+                                <span>Multiple configurations</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-features">
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>4K projection systems</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Integrated sound system</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>High-speed Wi-Fi</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Video conferencing</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Breakout areas</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Soundproof walls</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-cta">
+                            <a href="#booking" class="btn btn-primary">Book This Venue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="facilities-content" id="meeting-rooms">
+                <div class="facility-grid">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Meeting Room">
+                    </div>
+                    <div class="facility-details">
+                        <h3>Meeting Rooms</h3>
+                        <p>Our executive meeting rooms offer intimate spaces for smaller gatherings, board meetings, and workshops. Each room is equipped with the latest technology and comfortable furnishings to create a productive and professional environment.</p>
+                        
+                        <div class="facility-specs">
+                            <div class="facility-spec">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <span>500-1,500 sq ft each</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-users"></i>
+                                <span>10-50 guests</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-chair"></i>
+                                <span>Boardroom & U-shape</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-features">
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Smart TVs & displays</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Video conferencing</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Whiteboard walls</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Ergonomic seating</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Natural lighting</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Refreshment service</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-cta">
+                            <a href="#booking" class="btn btn-primary">Book This Venue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="facilities-content" id="exhibition-space">
+                <div class="facility-grid">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Exhibition Space">
+                    </div>
+                    <div class="facility-details">
+                        <h3>Exhibition Space</h3>
+                        <p>Our expansive exhibition hall provides the perfect venue for trade shows, product launches, and exhibitions. With high ceilings, flexible floor plans, and robust infrastructure, it can be customized to showcase your products and services effectively.</p>
+                        
+                        <div class="facility-specs">
+                            <div class="facility-spec">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <span>20,000 sq ft</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-users"></i>
+                                <span>Up to 2,000 guests</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-chair"></i>
+                                <span>Customizable layout</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-features">
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>High load-bearing floors</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Multiple power sources</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Loading dock access</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Rigging points</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Modular booth systems</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>24-hour security</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-cta">
+                            <a href="#booking" class="btn btn-primary">Book This Venue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="facilities-content" id="outdoor-venues">
+                <div class="facility-grid">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Outdoor Venue">
+                    </div>
+                    <div class="facility-details">
+                        <h3>Outdoor Venues</h3>
+                        <p>Our beautifully landscaped outdoor spaces offer a refreshing alternative for events. From garden receptions to rooftop gatherings, these venues provide a stunning natural backdrop while still offering all the amenities and services of our indoor facilities.</p>
+                        
+                        <div class="facility-specs">
+                            <div class="facility-spec">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <span>10,000 sq ft total</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-users"></i>
+                                <span>Up to 800 guests</span>
+                            </div>
+                            <div class="facility-spec">
+                                <i class="fas fa-chair"></i>
+                                <span>Various setups</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-features">
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Covered options available</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Outdoor lighting</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Weather contingency plans</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Outdoor sound system</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Scenic views</span>
+                            </div>
+                            <div class="facility-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Landscaped gardens</span>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-cta">
+                            <a href="#booking" class="btn btn-primary">Book This Venue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capacity Calculator -->
+            <div class="capacity-calculator">
+                <h3 class="calculator-title">Event Capacity Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="venue" class="form-label">Select Venue</label>
+                        <select id="venue" class="form-control form-select">
+                            <option value="" disabled selected>Choose a venue</option>
+                            <option value="grand-ballroom">Grand Ballroom</option>
+                            <option value="conference-hall-a">Conference Hall A</option>
+                            <option value="conference-hall-b">Conference Hall B</option>
+                            <option value="meeting-room">Meeting Room</option>
+                            <option value="exhibition-hall">Exhibition Hall</option>
+                            <option value="garden-terrace">Garden Terrace</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="setup" class="form-label">Event Setup</label>
+                        <select id="setup" class="form-control form-select">
+                            <option value="" disabled selected>Choose a setup</option>
+                            <option value="theater">Theater Style</option>
+                            <option value="classroom">Classroom Style</option>
+                            <option value="banquet">Banquet Style</option>
+                            <option value="reception">Reception Style</option>
+                            <option value="boardroom">Boardroom Style</option>
+                            <option value="u-shape">U-Shape Style</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="calculate" class="form-label">&nbsp;</label>
+                        <button id="calculate" class="btn btn-primary" style="width: 100%;">Calculate Capacity</button>
+                    </div>
+                </div>
+                <div class="calculator-result" id="calculatorResult">
+                    <h4 class="result-title">Estimated Capacity</h4>
+                    <div class="result-layout">
+                        <div class="result-item">
+                            <div class="result-number" id="capacityNumber">800</div>
+                            <div class="result-label">Guests</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="areaNumber">15,000</div>
+                            <div class="result-label">Square Feet</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="tableNumber">80</div>
+                            <div class="result-label">Tables</div>
+                        </div>
+                    </div>
+                    <a href="#booking" class="btn btn-secondary">Book This Configuration</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section class="virtual-tour section-padding" id="virtual-tour">
+        <div class="container">
+            <h2 class="section-title centered">Virtual Tour</h2>
+            <p class="section-subtitle centered">Experience our venues from anywhere with our immersive 360° virtual tour.</p>
+            
+            <div class="tour-container">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&h=600&fit=crop&crop=focalpoint&auto=format&q=80" alt="Grand Ballroom" class="tour-placeholder">
+                <div class="tour-overlay">
+                    <div class="tour-play" id="tourPlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events section-padding" id="events">
+        <div class="container">
+            <h2 class="section-title centered">Past Events</h2>
+            <p class="section-subtitle centered">Explore some of the memorable events we've had the privilege to host.</p>
+            
+            <div class="events-filters">
+                <div class="event-filter active" data-filter="all">All Events</div>
+                <div class="event-filter" data-filter="weddings">Weddings</div>
+                <div class="event-filter" data-filter="corporate">Corporate</div>
+                <div class="event-filter" data-filter="conferences">Conferences</div>
+                <div class="event-filter" data-filter="exhibitions">Exhibitions</div>
+                <div class="event-filter" data-filter="social">Social Events</div>
+            </div>
+            
+            <div class="events-grid">
+                <div class="event-card" data-category="weddings">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80" alt="Smith-Johnson Wedding">
+                        <div class="event-category">Wedding</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Smith-Johnson Wedding</h3>
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>June 15, 2023</span>
+                        </div>
+                        <p class="event-description">A stunning celebration with 350 guests featuring a custom floral installation, gourmet dining, and dancing until dawn in our Grand Ballroom.</p>
+                        <div class="event-details">
+                            <div class="event-attendees">
+                                <i class="fas fa-users"></i>
+                                <span>350 Guests</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="corporate">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80" alt="Tech Summit 2023">
+                        <div class="event-category">Corporate</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Tech Summit 2023</h3>
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>March 10-12, 2023</span>
+                        </div>
+                        <p class="event-description">A three-day industry conference featuring keynote speakers, breakout sessions, and networking opportunities for tech professionals.</p>
+                        <div class="event-details">
+                            <div class="event-attendees">
+                                <i class="fas fa-users"></i>
+                                <span>1,200 Attendees</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="exhibitions">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80" alt="International Art Expo">
+                        <div class="event-category">Exhibition</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">International Art Expo</h3>
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>September 5-8, 2023</span>
+                        </div>
+                        <p class="event-description">A prestigious art exhibition showcasing works from over 100 international artists across our expansive exhibition hall.</p>
+                        <div class="event-details">
+                            <div class="event-attendees">
+                                <i class="fas fa-users"></i>
+                                <span>5,000+ Visitors</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="conferences">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80" alt="Medical Conference">
+                        <div class="event-category">Conference</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Global Health Symposium</h3>
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>November 20-22, 2023</span>
+                        </div>
+                        <p class="event-description">An international medical conference bringing together healthcare professionals for presentations, workshops, and collaborative discussions.</p>
+                        <div class="event-details">
+                            <div class="event-attendees">
+                                <i class="fas fa-users"></i>
+                                <span>800 Delegates</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="social">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80" alt="Charity Gala">
+                        <div class="event-category">Social</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Annual Charity Gala</h3>
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>December 5, 2023</span>
+                        </div>
+                        <p class="event-description">A glamorous evening of fine dining, entertainment, and fundraising for children's education, raising over $500,000 for the cause.</p>
+                        <div class="event-details">
+                            <div class="event-attendees">
+                                <i class="fas fa-users"></i>
+                                <span>400 Guests</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="weddings">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80" alt="Garcia-Patel Wedding">
+                        <div class="event-category">Wedding</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Garcia-Patel Wedding</h3>
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>October 28, 2023</span>
+                        </div>
+                        <p class="event-description">A beautiful fusion wedding celebrating two cultures with traditional ceremonies, exquisite cuisine, and vibrant entertainment.</p>
+                        <div class="event-details">
+                            <div class="event-attendees">
+                                <i class="fas fa-users"></i>
+                                <span>500 Guests</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <h2 class="section-title centered">Our Services</h2>
+            <p class="section-subtitle centered">We offer a comprehensive range of services to ensure your event is flawlessly executed from start to finish.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="service-title">Catering</h3>
+                    <p class="service-description">Our in-house culinary team creates custom menus featuring gourmet cuisine from around the world. From elegant plated dinners to interactive food stations, we cater to all tastes and dietary requirements.</p>
+                    <a href="#booking" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3 class="service-title">Audio-Visual</h3>
+                    <p class="service-description">Our state-of-the-art AV equipment and experienced technicians ensure your presentations, speeches, and entertainment are delivered flawlessly with crystal-clear sound and stunning visuals.</p>
+                    <a href="#booking" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Event Design</h3>
+                    <p class="service-description">Our creative team works with you to design and transform our spaces to match your vision, from elegant floral arrangements to custom lighting, decor, and themed environments.</p>
+                    <a href="#booking" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="service-title">Event Planning</h3>
+                    <p class="service-description">Our experienced event planners provide end-to-end coordination services, handling everything from initial concept development to day-of execution, ensuring a seamless and stress-free experience.</p>
+                    <a href="#booking" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="service-title">Technology</h3>
+                    <p class="service-description">We offer high-speed Wi-Fi, video conferencing capabilities, digital signage, and other technological solutions to enhance your event and keep your attendees connected.</p>
+                    <a href="#booking" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="service-title">Concierge</h3>
+                    <p class="service-description">Our dedicated concierge team assists with accommodations, transportation, entertainment booking, and other guest services to ensure a memorable experience for all attendees.</p>
+                    <a href="#booking" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <h2 class="section-title centered">Client Testimonials</h2>
+            <p class="section-subtitle centered">Hear what our clients have to say about their experience with Grand Horizon.</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-slide active" data-index="0">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            Grand Horizon exceeded all our expectations for our corporate conference. The facilities were impeccable, the staff was attentive, and the catering was outstanding. Our attendees are still raving about the experience!
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>John Smith</h4>
+                                <p>CEO, Tech Innovations Inc.</p>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide" data-index="1">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            Our wedding day was absolutely perfect thanks to the incredible team at Grand Horizon. The ballroom was transformed into our dream venue, and the staff took care of every detail so we could focus on enjoying our special day.
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Bride</p>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide" data-index="2">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            We've hosted our annual trade show at Grand Horizon for three consecutive years, and each time has been better than the last. The flexible exhibition space, logistical support, and attention to detail make it the perfect venue for our needs.
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Robert Chen" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>Robert Chen</h4>
+                                <p>Event Director, Global Trade Association</p>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-arrow testimonial-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="testimonial-arrow testimonial-next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <span class="testimonial-dot active" data-index="0"></span>
+                <span class="testimonial-dot" data-index="1"></span>
+                <span class="testimonial-dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking section-padding" id="booking">
+        <div class="container">
+            <h2 class="section-title centered">Book Your Event</h2>
+            <p class="section-subtitle centered">Ready to plan your next event? Fill out the form below to check availability and receive a customized quote.</p>
+            
+            <div class="booking-container">
+                <div class="booking-image">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&h=1000&fit=crop&crop=focalpoint&auto=format&q=80" alt="Event Setup">
+                </div>
+                <div class="booking-form">
+                    <h3 class="booking-form-title">Event Inquiry</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name"  class="form-label">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="eventType" class="form-label">Event Type</label>
+                            <select id="eventType" class="form-control form-select" required>
+                                <option value="" disabled selected>Select event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="conference">Conference</option>
+                                <option value="exhibition">Exhibition</option>
+                                <option value="social">Social Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate" class="form-label">Event Date</label>
+                                <input type="date" id="eventDate" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guestCount" class="form-label">Expected Guests</label>
+                                <input type="number" id="guestCount" class="form-control" placeholder="Number of guests" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="venue" class="form-label">Preferred Venue</label>
+                            <select id="venue" class="form-control form-select" required>
+                                <option value="" disabled selected>Select venue</option>
+                                <option value="grand-ballroom">Grand Ballroom</option>
+                                <option value="conference-hall-a">Conference Hall A</option>
+                                <option value="conference-hall-b">Conference Hall B</option>
+                                <option value="meeting-room">Meeting Room</option>
+                                <option value="exhibition-hall">Exhibition Hall</option>
+                                <option value="garden-terrace">Garden Terrace</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Additional Information</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Tell us more about your event requirements"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Availability Calendar -->
+            <div class="availability-calendar">
+                <div class="calendar-header">
+                    <h3 class="calendar-title">Venue Availability</h3>
+                    <div class="calendar-nav">
+                        <div class="calendar-nav-btn" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="calendar-nav-btn" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="calendar">
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-color legend-available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-booked"></div>
+                        <span>Booked</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-selected"></div>
+                        <span>Selected</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <h2 class="section-title centered">Contact Us</h2>
+            <p class="section-subtitle centered">Have questions or need more information? Reach out to our team.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>123 Convention Avenue, Downtown District, Mumbai, Maharashtra 400001, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 22 1234 5678</p>
+                            <p>+91 98765 43210 (Events Team)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@grandhorizon.com</p>
+                            <p>events@grandhorizon.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed (By appointment only)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="#" class="contact-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="contact-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="contact-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="contact-social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 class="contact-form-title">Send Us a Message</h3>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName" class="form-label">Full Name</label>
+                            <input type="text" id="contactName" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" id="contactEmail" class="form-control" placeholder="Enter your email address" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPhone" class="form-label">Phone Number</label>
+                                <input type="tel" id="contactPhone" class="form-control" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject" class="form-label">Subject</label>
+                            <input type="text" id="contactSubject" class="form-control" placeholder="Enter message subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage" class="form-label">Message</label>
+                            <textarea id="contactMessage" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1647072643673!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://img.icons8.com/fluency/96/null/conference.png" alt="Grand Horizon Logo" class="logo-img">
+                        <span>Grand Horizon</span>
+                    </div>
+                    <p>Grand Horizon Convention Center is Mumbai's premier venue for exceptional events. With versatile spaces, world-class amenities, and impeccable service, we create memorable experiences for all occasions.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Our Venues</h3>
+                    <ul>
+                        <li><a href="#facilities">Grand Ballroom</a></li>
+                        <li><a href="#facilities">Conference Halls</a></li>
+                        <li><a href="#facilities">Meeting Rooms</a></li>
+                        <li><a href="#facilities">Exhibition Space</a></li>
+                        <li><a href="#facilities">Outdoor Venues</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                        <span>123 Convention Avenue, Downtown District, Mumbai, Maharashtra 400001, India</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt footer-contact-icon"></i>
+                        <span>+91 22 1234 5678</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope footer-contact-icon"></i>
+                        <span>info@grandhorizon.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Grand Horizon Convention Center. All rights reserved.</p>
+                <p>Designed with excellence in mind</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('show');
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Navigation active state
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Hero Slider
+        const swiper = new Swiper('.hero-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Facilities Tabs
+        const facilityTabs = document.querySelectorAll('.facility-tab');
+        const facilityContents = document.querySelectorAll('.facilities-content');
+
+        facilityTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const target = this.getAttribute('data-tab');
+                
+                // Update active tab
+                facilityTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show corresponding content
+                facilityContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.getAttribute('id') === target) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Before/After Slider
+        const sliderHandle = document.querySelector('.slider-handle');
+        const beforeImg = document.querySelector('.before-img');
+        
+        if (sliderHandle && beforeImg) {
+            let isDragging = false;
+            
+            const handleDrag = (e) => {
+                if (!isDragging) return;
+                
+                const container = sliderHandle.parentElement;
+                const containerRect = container.getBoundingClientRect();
+                
+                let position;
+                if (e.type === 'mousemove') {
+                    position = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+                } else if (e.type === 'touchmove') {
+                    position = ((e.touches[0].clientX - containerRect.left) / containerRect.width) * 100;
+                }
+                
+                position = Math.max(0, Math.min(100, position));
+                
+                sliderHandle.style.left = `${position}%`;
+                beforeImg.style.clipPath = `polygon(0 0, ${position}% 0, ${position}% 100%, 0 100%)`;
+            };
+            
+            sliderHandle.addEventListener('mousedown', () => {
+                isDragging = true;
+            });
+            
+            sliderHandle.addEventListener('touchstart', () => {
+                isDragging = true;
+            });
+            
+            document.addEventListener('mousemove', handleDrag);
+            document.addEventListener('touchmove', handleDrag, { passive: true });
+            
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+            
+            document.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+        }
+
+        // Event Filtering
+        const eventFilters = document.querySelectorAll('.event-filter');
+        const eventCards = document.querySelectorAll('.event-card');
+
+        eventFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Update active filter
+                eventFilters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter events
+                eventCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Testimonials Slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const testimonialPrev = document.querySelector('.testimonial-prev');
+        const testimonialNext = document.querySelector('.testimonial-next');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialSlides[index].classList.add('active');
+            testimonialDots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+
+        testimonialPrev.addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        testimonialNext.addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        // Auto rotate testimonials
+        let testimonialInterval = setInterval(function() {
+            currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        document.querySelector('.testimonials-container').addEventListener('mouseenter', function() {
+            clearInterval(testimonialInterval);
+        });
+
+        document.querySelector('.testimonials-container').addEventListener('mouseleave', function() {
+            testimonialInterval = setInterval(function() {
+                currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+        });
+
+        // Capacity Calculator
+        const calculateBtn = document.getElementById('calculate');
+        const calculatorResult = document.getElementById('calculatorResult');
+        const capacityNumber = document.getElementById('capacityNumber');
+        const areaNumber = document.getElementById('areaNumber');
+        const tableNumber = document.getElementById('tableNumber');
+
+        calculateBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const venue = document.getElementById('venue').value;
+            const setup = document.getElementById('setup').value;
+            
+            // This would normally be calculated based on actual venue data
+            // For demo purposes, we're using placeholder values
+            let capacity, area, tables;
+            
+            if (venue === 'grand-ballroom') {
+                area = 15000;
+                if (setup === 'theater') {
+                    capacity = 1200;
+                    tables = 0;
+                } else if (setup === 'banquet') {
+                    capacity = 800;
+                    tables = 80;
+                } else if (setup === 'classroom') {
+                    capacity = 600;
+                    tables = 150;
+                } else {
+                    capacity = 1000;
+                    tables = 100;
+                }
+            } else if (venue === 'conference-hall-a' || venue === 'conference-hall-b') {
+                area = 5000;
+                if (setup === 'theater') {
+                    capacity = 500;
+                    tables = 0;
+                } else if (setup === 'banquet') {
+                    capacity = 300;
+                    tables = 30;
+                } else if (setup === 'classroom') {
+                    capacity = 250;
+                    tables = 60;
+                } else {
+                    capacity = 400;
+                    tables = 40;
+                }
+            } else {
+                area = 2000;
+                capacity = 150;
+                tables = 15;
+            }
+            
+            capacityNumber.textContent = capacity;
+            areaNumber.textContent = area;
+            tableNumber.textContent = tables;
+            
+            calculatorResult.classList.add('show');
+        });
+
+        // Calendar Generation
+        const calendarGrid = document.getElementById('calendarGrid');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+        
+        function generateCalendar(month, year) {
+            // Clear previous calendar
+            calendarGrid.innerHTML = '';
+            
+            // Add weekday headers
+            const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            weekdays.forEach(day => {
+                const weekdayEl = document.createElement('div');
+                weekdayEl.className = 'calendar-weekday';
+                weekdayEl.textContent = day;
+                calendarGrid.appendChild(weekdayEl);
+            });
+            
+            // Get first day of month and number of days
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            // Add empty cells for days before first of month
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day';
+                calendarGrid.appendChild(emptyDay);
+            }
+            
+            // Add days of month
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayEl = document.createElement('div');
+                dayEl.className = 'calendar-day';
+                dayEl.textContent = i;
+            }
+        }
+            const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                createConfetti(e.clientX, e.clientY);
+            });
+        });
+                // // Mark today
+                // const today = new Date();
+                // if (i === today.getDate() && month === today.getMon
+            </script>
+</body>
+</html>
